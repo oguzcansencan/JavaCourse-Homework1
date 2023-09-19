@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Oguz
+ *
+ */
+module JavaCourse {
+}

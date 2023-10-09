@@ -5,6 +5,8 @@ public class Main {
 		
 		problem1();
 		problem2();
+		problem3();
+		problem4();
 		
 	}
 	
@@ -50,6 +52,42 @@ public class Main {
 			return true;
 		}
 		return primeCheck(n, m+1);
+	}
+	
+	// Problem 3: Object Basics
+	private static void problem3() {
+		
+		String text = "To be or not to be, that is the question;"
+				+"Whether `tis nobler in the mind to suffer" 
+				+" the slings and arrows of outrageous fortune,"
+				+" or to take arms against a sea of troubles,"
+				+" and by opposing end them?";
+		int spaces = 0,
+				vowels = 0,
+				letters = 0;
+		
+		char c;
+		for (int i = 0; i < text.length(); i++) {
+			c = text.toLowerCase().charAt(i);
+			
+			if (c == ' ')
+				spaces++;
+			else if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+				vowels++;
+			
+			if (c >= 'a' && c <= 'z')
+				letters++;			
+		}
+		
+		System.out.println("The text contained vowels: " + vowels + "\n" + "consonants " + (letters - vowels) + "\n" + "spaces: " + spaces);
+		
+		
+	}
+	
+	
+	// Problem 4: Object Basics
+	private static void problem4() {
+		
 	}
 
 }

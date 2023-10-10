@@ -1,12 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
+						
+		System.out.println("##### Problem 1 #####");
 		problem1();
+		System.out.println();
+		
+		System.out.println("##### Problem 2 #####");
 		problem2();
+		System.out.println();
+		
+		System.out.println("##### Problem 3 #####");
 		problem3();
+		System.out.println();
+		
+		System.out.println("##### Problem 4 #####");
 		problem4();
+		System.out.println();
 		
 	}
 	
@@ -87,6 +100,38 @@ public class Main {
 	
 	// Problem 4: Object Basics
 	private static void problem4() {
+		String text = "To be or not to be, that is the question;"
+				+"Whether `tis nobler in the mind to suffer" 
+				+" the slings and arrows of outrageous fortune,"
+				+" or to take arms against a sea of troubles,"
+				+" and by opposing end them?";
+		
+		String[] words = text.toLowerCase().split(" ");
+		
+		List<String> ordered = new ArrayList<String>();
+		
+		ordered.add(words[0]);
+		
+		boolean flag;
+		
+		for (int i = 1; i < words.length; i++) {
+			flag = false;
+			for (int j = 0; j < ordered.size(); j++) {
+				if(words[i].compareTo(ordered.get(j)) > 0) {
+					continue;
+				}
+				ordered.add(j, words[i]);
+				flag = true;
+				break;
+			}
+			if(!flag) {
+				ordered.add(words[i]);
+			}
+		}
+		
+		for (String str : ordered) {
+			System.out.println(str);
+		}
 		
 	}
 
